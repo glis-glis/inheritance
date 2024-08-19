@@ -37,15 +37,11 @@ public:
 		}
 	}
 
-	void traverse() {
+	void run() {
+		writeln(_perLine->info(), " of File '", _fileName, "'.");
 		for (auto& s: _strings) {
 			_perLine->apply(s);
 		}
-	}
-
-	void run() {
-		writeln(_perLine->info(), " of File '", _fileName, "'.");
-		traverse();
 		writeln(_perLine->summary(), " in File '", _fileName, "'.");
 	}
 };
